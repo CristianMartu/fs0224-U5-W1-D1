@@ -4,9 +4,10 @@ import lombok.*;
 
 import java.util.List;
 
-@AllArgsConstructor
 @Getter
 @Setter
+@AllArgsConstructor
+
 public class Pizza {
     private String name;
     private List<Topping> toppings;
@@ -24,8 +25,9 @@ public class Pizza {
     @Override
     public String toString(){
         StringBuilder result = new StringBuilder("\n\t\t" + name + " (");
-        for(Topping topping: toppings){
-            result.append(" " + topping.getName() + " ");
+        for (int i = 0; i < toppings.size(); i++) {
+            if (i < toppings.size() - 1) result.append(toppings.get(i).getName() + ", ");
+            else result.append(toppings.get(i).getName());
         }
         result.append(")\t\t" + calories + "\t\t" + price);
     return result.toString();
