@@ -1,0 +1,26 @@
+package cristianmartucci.U5_W1_D1.entities;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
+import java.util.List;
+
+@AllArgsConstructor
+@Getter
+@Setter
+public class Menu {
+    private List<Pizza> pizzas;
+    private List<Topping> toppings;
+    private List<Drink> drinks;
+
+    @Override
+    public String toString() {
+        return "Menu:" +
+                "\n\tPizzas:" + pizzas +
+                "\n\tToppings:" + toppings +
+                "\n\tDrinks:" + drinks +
+                '}';
+    }
+}
